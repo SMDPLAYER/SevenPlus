@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SevenPlus</string>
+    <string name="str_eng_uzb">ENG-UZB</string>
+    <string name="str_uzb_eng">UZB-ENG</string>
+    <string name="ielts">IELTS</string>
+    <string name="rus_eng">RUS-ENG</string>
+</resources>

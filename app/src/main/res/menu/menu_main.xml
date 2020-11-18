@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+   <group android:menuCategory="container" >
+       <item
+           android:id="@+id/menuTranslate"
+           android:icon="@drawable/translateicn"
+           android:title="Переводчик" />
+       <item
+           android:id="@+id/menuDictionarys"
+           android:icon="@drawable/agendaicn"
+           android:title="Словарь" />
+       <item
+           android:id="@+id/menuPodcast"
+           android:icon="@drawable/speakericn"
+           android:title="Подкасты" />
+       <item
+           android:id="@+id/menuCourse"
+           android:icon="@drawable/educationicn"
+           android:title="Курсы" />
+   </group>
+    <group android:menuCategory="system">
+        <item
+
+            android:id="@+id/menuCAll"
+            android:icon="@drawable/helpicn"
+            android:title="Обратная связь" />
+        <item
+            android:id="@+id/menuInfo"
+            android:icon="@drawable/informationicn"
+            android:title="Отзывы" />
+    </group>
+
+</menu>

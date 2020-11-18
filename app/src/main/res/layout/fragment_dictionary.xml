@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/circular_white_border"
+        app:endIconMode="clear_text"
+        app:hintEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:drawableEnd="@drawable/searchicn"
+            android:drawablePadding="8.0dip"
+            android:ellipsize="end"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingStart="12.0dip"
+            android:paddingEnd="12.0dip"
+            android:scrollHorizontally="true"
+            android:textSize="14.0sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <!--    </com.loopeer.shadow.ShadowView>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layoutAnimation="@anim/layout_animation_fall_down"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_words" />
+
+    <ProgressBar
+        android:id="@+id/loaderProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomPanel"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.loopeer.shadow.ShadowView
+            android:id="@+id/bottom_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cornerRadiusTL="24.0dip"
+            app:cornerRadiusTR="24.0dip"
+            app:elevation="5.0dip"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:shadowColor="@color/colorBackCard"
+            app:shadowMarginTop="4.0dip"
+            app:shadowRadius="8.0dip">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80.0dip"
+                android:background="@android:color/transparent" />
+        </com.loopeer.shadow.ShadowView>
+
+        <ImageView
+            android:id="@+id/internetImage"
+            android:layout_width="wrap_content"
+            android:layout_height="18.0dip"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/english"
+            app:layout_constraintBottom_toTopOf="@+id/textEngUz"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tariffImage"
+            app:layout_constraintTop_toTopOf="@+id/bottom_panel"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textEngUz"
+            style="@style/MazzardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4.0dip"
+            android:text="@string/str_eng_uzb"
+            android:textColor="@color/colorSelected"
+            android:textSize="12.0sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/internetImage"
+            app:layout_constraintRight_toRightOf="@+id/internetImage"
+            app:layout_constraintTop_toBottomOf="@+id/internetImage" />
+
+        <ImageView
+            android:id="@+id/tariffImage"
+            android:layout_width="wrap_content"
+            android:layout_height="18.0dip"
+            android:adjustViewBounds="true"
+            android:src="@drawable/uzbek"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_panel"
+            app:layout_constraintBottom_toTopOf="@+id/textUzEn"
+            app:layout_constraintLeft_toRightOf="@+id/internetImage"
+            app:layout_constraintRight_toLeftOf="@+id/serviceImage"
+            app:layout_constraintTop_toTopOf="@+id/bottom_panel"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textUzEn"
+            style="@style/MazzardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4.0dip"
+            android:text="@string/str_uzb_eng"
+            android:textColor="#ff777777"
+            android:textSize="12.0sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/tariffImage"
+            app:layout_constraintRight_toRightOf="@+id/tariffImage"
+            app:layout_constraintTop_toBottomOf="@+id/tariffImage" />
+
+        <ImageView
+            android:id="@+id/serviceImage"
+            android:layout_width="wrap_content"
+            android:layout_height="18.0dip"
+            android:adjustViewBounds="true"
+            android:src="@drawable/english"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_panel"
+            app:layout_constraintBottom_toTopOf="@+id/textEnRu"
+            app:layout_constraintLeft_toRightOf="@+id/tariffImage"
+            app:layout_constraintRight_toLeftOf="@+id/moreImage"
+            app:layout_constraintTop_toTopOf="@+id/bottom_panel"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textEnRu"
+            style="@style/MazzardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4.0dip"
+            android:text="ENG-RUS"
+            android:textColor="#ff777777"
+            android:textSize="12.0sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/serviceImage"
+            app:layout_constraintRight_toRightOf="@+id/serviceImage"
+            app:layout_constraintTop_toBottomOf="@+id/serviceImage" />
+
+        <ImageView
+            android:id="@+id/moreImage"
+            android:layout_width="wrap_content"
+            android:layout_height="20.0dip"
+            android:adjustViewBounds="true"
+            android:src="@drawable/russia"
+
+            app:layout_constraintBottom_toBottomOf="@+id/serviceImage"
+            app:layout_constraintLeft_toRightOf="@+id/serviceImage"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/serviceImage"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textRuEn"
+            style="@style/MazzardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rus_eng"
+            android:textColor="#ff777777"
+            android:textSize="12.0sp"
+            app:layout_constraintLeft_toLeftOf="@+id/moreImage"
+            app:layout_constraintRight_toRightOf="@+id/moreImage"
+            app:layout_constraintTop_toTopOf="@+id/textEnRu" />
+
+        <View
+            android:id="@+id/btnUzEn"
+            android:clickable="true"
+            style="@style/ImageButton"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_width="60.0dip"
+            android:layout_height="60.0dip"
+            android:padding="8.0dip"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_panel"
+            app:layout_constraintLeft_toLeftOf="@+id/tariffImage"
+            app:layout_constraintRight_toRightOf="@+id/tariffImage"
+            app:layout_constraintTop_toTopOf="@+id/bottom_panel"
+            android:focusable="true" />
+
+        <View
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/btnEnRu"
+            style="@style/ImageButton"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_width="60.0dip"
+            android:layout_height="60.0dip"
+            android:padding="8.0dip"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_panel"
+            app:layout_constraintLeft_toLeftOf="@+id/serviceImage"
+            app:layout_constraintRight_toRightOf="@+id/serviceImage"
+            app:layout_constraintTop_toTopOf="@+id/bottom_panel" />
+
+        <View
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/btnRuEn"
+            style="@style/ImageButton"
+            android:layout_width="60.0dip"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_height="60.0dip"
+            android:padding="8.0dip"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_panel"
+            app:layout_constraintLeft_toLeftOf="@+id/moreImage"
+            app:layout_constraintRight_toRightOf="@+id/moreImage"
+            app:layout_constraintTop_toTopOf="@+id/bottom_panel" />
+
+        <View
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/btnEnUz"
+            style="@style/ImageButton"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_width="60.0dip"
+            android:layout_height="60.0dip"
+            android:padding="8.0dip"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_panel"
+            app:layout_constraintLeft_toLeftOf="@+id/internetImage"
+            app:layout_constraintRight_toRightOf="@+id/internetImage"
+            app:layout_constraintTop_toTopOf="@+id/bottom_panel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

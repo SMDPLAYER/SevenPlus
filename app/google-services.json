@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "666379846787",
+    "firebase_url": "https://seven-plus-dictionary.firebaseio.com",
+    "project_id": "seven-plus-dictionary",
+    "storage_bucket": "seven-plus-dictionary.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666379846787:android:b910d15451d1e6462dc7b6",
+        "android_client_info": {
+          "package_name": "uz.smd.sevenplusdictionary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666379846787-itp8p9u7t9ifq36vui3a75huj7p22b03.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uz.smd.sevenplusdictionary",
+            "certificate_hash": "fa36a58e74b9ac08d5c54dc68439a1103d91afeb"
+          }
+        },
+        {
+          "client_id": "666379846787-td414sug7k87vknf11g7e3u7fkqu056f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATK8BhTL_LDiRhLWFPDCOBZqywgXD9B4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666379846787-td414sug7k87vknf11g7e3u7fkqu056f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
